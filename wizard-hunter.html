@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard hunter</title>
+    <link rel="stylesheet" href="stye.css">
+</head>
+<body>
+    <div class="gameList">
+        <div id="wizard-hunter" class="gameName">
+            <div class="scroreBoard" style="z-index: 9999; transition: all 500ms ease-in-out; position: fixed; top: 0; left: 100%; display: flex; text-align: center; align-items: center; height: 100vh; width: 100%; background: black; color: white; font-size: 35px;">
+                <div style="width: 100%;">
+                    <button class="restartBtn" style="border: none; font-weight: bold; color: white; background: rgb(0, 173, 0); font-size: 25px; padding:8px 20px; margin-bottom: 50px; cursor: pointer;">Restart</button>
+                    <div style="text-align: center; margin-bottom: 20px; color: rgb(255, 196, 0);">
+                    Difficulty: <span class="difficultyInfo"></span>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 20px; color: rgb(255, 196, 0);">
+                        Highest score: <span class="highestScore"></span>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 20px; color: rgb(255, 196, 0);">
+                        Your score: <span class="yourScore">0</span>
+                    </div>
+                    <div style="text-align: center; color: rgb(255, 196, 0);">
+                        Headshot: <span class="headShotCount">0</span>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div style="color: white; font-size: 35px; margin-left: 100px; padding:10px;">Score: <span class="score">0</span></div>
+                <div class="gameOver" style="display: none; font-weight: bolder; z-index: 999; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); color: rgb(255, 255, 255); font-size: 70px; padding-right: 20px; margin-left: auto;">Game Over</div>
+                <div style="display: flex; padding-right: 100px; margin-left: auto;">
+                    <div class="life" style="margin: 0 10px; width: 25px; height: 25px;border-radius: 50%;"><img style="width: 100%;" src="images/love.png" alt=""></div>
+                    <div class="life" style="margin: 0 10px; width:25px; height: 25px; border-radius: 50%;"><img style="width: 100%;" src="images/love.png" alt=""></div>
+                    <div class="life" style="margin: 0 10px; width:25px; height: 25px; border-radius: 50%;"><img style="width: 100%;" src="images/love.png" alt=""></div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:50px;">
+                <button class="startGame" style="cursor: pointer; display: inline-block; background: rgba(255, 187, 0, 0.781); padding:8px 25px; z-index: 99; border: none; color:white; font-size: 25px; font-weight: bolder">Start new game</button>
+                <div>
+                    <div style="color: rgb(255, 217, 0); font-size: 30px;  margin-top: 20px;">Choose difficulty</div>
+                    <div style="margin-top: 15px; display: inline-block;">
+                        <select name="" id="difficulty" style="cursor: pointer; border: none; outline: none; font-size: 20px; background:rgb(255, 217, 0); width: 230px; padding: 5px 10px;">
+                            <option style="cursor: pointer;" value="2500">Begginer</option>
+                            <option style="cursor: pointer;" value="2000">Ameture</option>
+                            <option style="cursor: pointer;" value="1500">Professional</option>
+                            <option style="cursor: pointer;" value="1000">Expert</option>
+                            <option style="cursor: pointer;" value="500">Asian</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="field">
+                <div class="hit"></div>
+                <div class="spark" style="width: 35px;">
+                    <img  style="width: 100%;" src="images/spark.png" alt="">
+                </div>
+                
+                <div class="target">
+                    <div class="smoke">
+                        <img style="width: 100%;" src="images/2iiG.gif" alt="">
+                        <div class="smokeDrop"></div>
+                    </div>
+                    <img class="ghostImg" style="width: 100%;" src="images/ghost.png" alt="">
+                    <div class="bodyTarget"></div>
+                    <div class="headTarget"></div>
+                    <div class="headShotMsg">headshot!</div>
+                    <div class="missShotMsg">miss!</div>
+                </div>
+            </div>
+            <div class="sniper"><img style="width: 100%; height:100%" src="images/2026467.png" alt=""></div>
+        </div>
+    </div>
+    <script src="wad.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

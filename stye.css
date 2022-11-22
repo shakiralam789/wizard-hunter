@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+}
+.gameChoose{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-top: 15px;
+    width: 100%;
+}
+.allGame{
+    background-color: rgb(255, 230, 0);
+    width: 100%;
+    height: 100%;
+    padding: 15px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+}
+.gameName{
+    background: url("images/bg4.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.headShotMsg,.missShotMsg{
+    color: rgb(255, 255, 255);
+    position: fixed;
+    opacity: 0;
+    font-size: 18px;
+    z-index: 9999999;
+}
+
+.missShotMsg{
+    color: red;
+}
+
+.field{
+    width: 1240px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+}
+
+.sniper{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(0, 0, 0, 0.300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    transform: scale(0);
+    transition: transform 600ms linear;
+    z-index: 99999;
+}
+
+.sniper::after{
+    content: '';
+    position: absolute;
+    margin-left: -1.5px;
+    width: 4.5px;
+    height: 4.5px;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+}
+.none{
+    display: none;
+}
+
+.target{
+    top: 30%;
+    left: 47%;
+    width: 70px;
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    transition: all 500ms ease-out;
+    animation: target 500ms linear infinite alternate;
+    margin-top: 0px;
+}
+
+@keyframes target{
+    100%{
+        margin-top: 6px;
+    }
+}
+
+.targetRotateLeft{
+    transform-origin: top;
+    transform: rotate(0deg);
+    animation: rotateTrg 600ms ease-in-out forwards;
+}
+
+@keyframes rotateTrg{
+    70%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.targetRotateRight{
+    transform-origin: top;
+    transform: rotate(0deg);
+    animation: rotateTrg2 600ms ease-in-out forwards;
+}
+
+@keyframes rotateTrg2{
+    70%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.headTarget{
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    top: 6px;
+    left: 20px;
+    z-index: 999;
+    background: green;
+    opacity: 0;
+    border-radius: 20px 20px 0 0;
+}
+.bodyTarget{
+    position: absolute;
+    width: 60px;
+    height: 55px;
+    bottom: 8px;
+    left: 6px;
+    z-index: 999;
+    background: rgb(128, 26, 0);
+    opacity: 0;
+    border-radius: 16px;
+}
+.smoke{
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    top: -87px;
+    left: -90px;
+    z-index: 0;
+    filter: grayscale(22%) sepia(23%) blur(4px) brightness(45%) hue-rotate(254deg) saturate(447%) opacity(80%) contrast(247%);
+}
+.ghostImg{
+    z-index: 99;
+    position: relative;
+}
+.spark{
+    position: fixed;
+    transform: scale(0);
+    z-index: 999;
+    display: none;
+}
+
+#foobar{
+    display: none;
+}
+.hit{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: 999;
+}
+
+.hitAnim{
+    animation: hit 250ms linear forwards;
+}
+
+@keyframes hit{
+    0%{
+        transform: translate(-50%,-50%) scale(0);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate(-50%,-50%) scale(1);
+        opacity: 0;
+    }
+}
