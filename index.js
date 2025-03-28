@@ -359,7 +359,7 @@ startGame.addEventListener('click',function(){
          let y = e.clientY
          hit.style.top = y+'px' 
          hit.style.left = x+'px'
-         hit.style.background = 'rgb(0, 255, 0)'
+         hit.style.background = 'yellow'
          setTimeout(()=>{
           hit.classList.remove('hitAnim')
          },300)

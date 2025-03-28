@@ -33,9 +33,10 @@
 }
 
 .headShotMsg,.missShotMsg{
-    color: rgb(255, 255, 255);
+    color: yellow;
     position: fixed;
     opacity: 0;
+    font-weight: bold;
     font-size: 18px;
     z-index: 9999999;
 }
